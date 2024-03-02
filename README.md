@@ -20,7 +20,6 @@ You can install the requirements using pip:
 ```bash
 pip install Flask
 pip install requests
-pip install flask-socketio
 ```
 
 You might also wanna install numpy:
