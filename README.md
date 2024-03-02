@@ -1,4 +1,4 @@
-# Talpiot Hash Project
+# Hash Project
 
 ## Overview
 We strive to deliver exemplary club services to both users and clothing stores. Our aim is to ensure **user privacy** while maintaining the convenience for stores. To achieve this balance, we have devised a system comprising three distinct services:
