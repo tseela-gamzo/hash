@@ -4,13 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moadon Tov</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Set background color of the page */
+        }
+
+        form {
+            background-color: #4a90e2; /* Adjusted shade of blue */
+            color: white; /* Text color */
+            font-size: 20px; /* Font size */
+            border: none;
+            border-radius: 20px; /* Round edges */
+            padding: 20px;
+            width: 25vw; /* Wrap size */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            margin-bottom: 10px;
+            width: calc(100% - 40px); /* Adjust width for padding */
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #3a7ab0; /* Adjusted shade of blue for button */
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #306191; /* Darker shade on hover */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            background-color: #ffffff; /* White background for text inputs */
+            color: #000000; /* Black text color for text inputs */
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none; /* Remove default focus outline */
+            box-shadow: 0 0 0 3px #4a90e2; /* Add custom focus style */
+        }
+    </style>
 </head>
 <body>
-    <h1>Add User</h1>
     <form method="POST" action="/add_user">
-        <label for="username">Username:</label>
+        <h1>Add a New User</h1>
+        <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
+        <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Add">
     </form>
