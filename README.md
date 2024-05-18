@@ -36,7 +36,7 @@ Each `app.py` file is an executable file. For each service, there is an `app.py`
 To run each file, execute the following commands in your terminal:
 
 ```bash
-python moadon-tov/app.py
+python club/app.py
 python store/app.py
 python user/app.py
 ```
