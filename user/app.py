@@ -5,32 +5,17 @@ import requests
 # 2) send a proof to the store server
 
 
+# Here is a way of sending data to the server
+url = 'http://localhost:5050/api'
+json_data = {'message': 'hii :), af paam lo raiti od hiyuh kaze (lo, lo, lo)'}
 
-# Here is a way of getting data from a server
-url = 'http://localhost:5000'
-
-# Sending a GET request
-response = requests.get(url)
-
-# Print the response
-print("Response Status Code:", response.status_code)
-print("Response Body:", response.text)
-
-
-
-# Here is a way of sending data to a server
-url = 'http://example.com/api'
-data = {'message': 'hello'}
-
-# try to send the data
 try:
-    # send a POST request
-    response = requests.post(url, json=data)
-    if response.status_code == 200:
-        print("Message sent successfully!")
-    else:
-        print("Failed to send message. Status code:", response.status_code)
-# If an error occured -> print error information
-except requests.exceptions.RequestException as e:
-    print("An error occurred:", e)
-
+    # Send the POST request and capture the response
+    response = requests.post(url, json=json_data)
+    print('Status Code:', response.status_code)
+    print('Response Content:', response.text)
+    response.raise_for_status()  # Raise an HTTPError if the response was unsuccessful
+except requests.exceptions.HTTPError as http_err:
+    print(f'HTTP error occurred: {http_err}')
+except Exception as err:
+    print(f'Other error occurred: {err}')

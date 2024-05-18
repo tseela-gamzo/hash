@@ -1,9 +1,11 @@
 # An object of Flask class is our WSGI application.
 from flask import Flask, render_template, request, jsonify
 import threading
+import logging
 
 # Flask constructor takes the name of current module (__name__) as argument.
 app = Flask(__name__)
+logging.basicConfig(level=logging.DEBUG)
 
 # Initial sentence
 current_message = "Welcome to the main screen!"
@@ -22,11 +24,22 @@ def set_homescreen_message(message):
 # Get data from someone
 @app.route('/api', methods=['POST'])
 def api():
-    data = request.form['message']
+    data = request.json
+    message = data['message']
 
-    # do something
+    logging.debug(f'Received message: {message}')
+        
+    #
+    #
+    # HERE you will write your api logic
+    # (which is probably the function that makes sure that the proof, the user sent, is valid)
+    #
+    #
 
-    return jsonify({'status': 'success', 'message': data})
+    set_homescreen_message(message)
+
+    return jsonify({'status': 'success', 'message': message})
+
 
 
 # The route() function of the Flask class tells the application which URL should call the associated function.
@@ -39,5 +52,5 @@ def main_screen():
 # main driver function
 if __name__ == '__main__':
     # run() method of Flask class runs the application on the local development server.
-    app.run(port=5050)
+    app.run(port=5050, debug=True)
 

@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5"> <!-- Refresh the page every 5 seconds -->
     <title>Main Screen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Set background color of the page */
+        }
+
+        .unpressible-button {
+            background-color: #4a90e2; /* Adjusted shade of blue */
+            color: white; /* Text color */
+            font-size: 30px; /* Increased font size */
+            border: none;
+            cursor: default;
+            width: 50vw; /* 50% of the viewport width */
+            height: 50vh; /* 50% of the viewport height */
+            border-radius: 20px; /* Round edges */
+            padding: 10px 20px;
+        }
+
+        .unpressible-button:focus {
+            outline: none; /* Remove the default focus outline */
+        }
+    </style>
 </head>
 <body>
-    <h1>Main Screen</h1>
-    <p>{{ sentence }}</p>
+    <button class="unpressible-button" disabled>{{ sentence }}</button>
 </body>
 </html>

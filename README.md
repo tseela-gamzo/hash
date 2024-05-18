@@ -3,7 +3,7 @@
 ## Overview
 We strive to deliver exemplary club services to both users and clothing stores. Our aim is to ensure **user privacy** while maintaining the convenience for stores. To achieve this balance, we have devised a system comprising three distinct services:
 
-1. **moadon-tov**: This service operates as the backbone of our club, responsibly managing the database with utmost reliability, security, and safety.
+1. **club**: This service operates as the backbone of our club, responsibly managing the database with utmost reliability, security, and safety.
 
 2. **user**: This software, embedded within the consumer's device, facilitates the transmission of club membership proof to the stores within the mall. It operates on the computational chip embedded within the club card provided to the consumer.
 
